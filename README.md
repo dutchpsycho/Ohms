@@ -1,5 +1,7 @@
 # Ohms
 
+![OHMS](./img/OHMS.png)
+
 **Ohms** is a Rust-based tool created for analyzing Windows dlls & exes. It identifies and dumps various types of hooks (e.g., inline hooks, syscall routines) present within the target, providing disassembly for each detected hook.
 
 ## Features
