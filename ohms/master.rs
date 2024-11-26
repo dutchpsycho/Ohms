@@ -9,22 +9,17 @@ use std::path::Path;
 
 fn main() {
 
-    println!(r#"OHMS hook dumper
-made by hatedamon lolol :p	
-,-----.
-\======'.
- \  ()   '.
-  \   \/ V '.
-   \  || |   '._                                 _,cmmmnc,_
-    \___68FS___\'-._=----+- _______________,.-=:3H)###C--  `c._
-    :|=--------------`---"'`.   `  `.   `.   `,   `~""==="~`    `'-.___
-  ,dH] '       =(*)=         :       ---==;=--;  .   ;    +-- -_ .-`
-  :HH]_:______________  ____,.........__     _____,.----=-"~ `
-  ;:""'"'----._.------\`  :          .   `.'`'"'"'"P
-  |:      .-'==-.__)___\. :        .   .'`___L~___(
-  |:  _.'`       '|   / \.:      .  .-`""`
-  `'"'            `--'   \:    ._.-'
-                          |_`============>-
+    println!(r#"
+▄██████▄     ▄█    █▄      ▄▄▄▄███▄▄▄▄      ▄████████ 
+███    ███   ███    ███   ▄██▀▀▀███▀▀▀██▄   ███    ███ 
+███    ███   ███    ███   ███   ███   ███   ███    █▀  
+███    ███  ▄███▄▄▄▄███▄▄ ███   ███   ███   ███        
+███    ███ ▀▀███▀▀▀▀███▀  ███   ███   ███ ▀███████████ 
+███    ███   ███    ███   ███   ███   ███          ███ 
+███    ███   ███    ███   ███   ███   ███    ▄█    ███ 
+ ▀██████▀    ███    █▀     ▀█   ███   █▀   ▄████████▀  
+                                                       
+made by hatedamon lolol :p
     "#);
 
     println!("name of dll/exe? ");
@@ -52,17 +47,17 @@ made by hatedamon lolol :p
         .read_line(&mut base_input)
         .expect("wtf?");
     let base_address: usize = if let Ok(value) = usize::from_str_radix(base_input.trim_start_matches("0x"), 16) {
-        println!("k, I use 0x{:x}", value);
+        println!("k, I use 0x{:x}\n", value);
         value
     } else {
-        println!("k, I use 0x0");
+        println!("k, I use 0x0\n");
         0x0
     };
 
     let (sections, pe_info) = parser::get_sections_and_pe_info(&buffer, base_address);
     hooks::dump_hooks(&buffer, base_address, &sections, pe_info, file_name);
 
-    println!("done :3");
+    println!("\ndone :3");
     wait_for_exit();
 }
 

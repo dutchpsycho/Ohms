@@ -149,5 +149,5 @@ pub fn dump_hooks(buffer: &[u8], base: usize, sections: &[Section], pe_info: Opt
         }
     }
 
-    println!("Dumped to -> {}", outname);
+    println!("\nwritten to -> {}", outname);
 }
