@@ -9,8 +9,8 @@ use std::path::Path;
 
 fn main() {
 
-    println!(r#"                      
-OHMS hook dumper
+    println!(r#"OHMS hook dumper
+made by hatedamon lolol :p	
 ,-----.
 \======'.
  \  ()   '.
@@ -26,7 +26,6 @@ OHMS hook dumper
   `'"'            `--'   \:    ._.-'
                           |_`============>-
     "#);
-    println!("made by hatedamon lolol :p\n");
 
     println!("name of dll/exe? ");
     let mut file_name = String::new();
